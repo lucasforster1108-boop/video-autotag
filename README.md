@@ -2,9 +2,17 @@
 
 # video-autotag — first-pass tags for a video library, without watching every file
 
-My local library kept growing and my tagging discipline didn't. Hundreds of files, most of them named like `final_v2.mp4`, and library tools like Stash are only as good as the tags you feed them — which I never got around to typing in.
+**In plain terms:** this is a tool for people whose adult video collection has outgrown their memory.
 
-So I wrote the lazy version: point this at a folder, it watches a few frames of each video for you and writes down what it saw. Not final tags — a first draft you can skim and fix, instead of a blank page.
+Here is the problem it solves. You download videos for months or years, and the filenames are a mess — random numbers, site codes, `final_v2.mp4`. The day you want to find one specific scene again, all you can do is open files one by one and scrub through them, going by memory. The more you collect, the less you remember.
+
+This tool ignores filenames completely. It looks at the actual pictures: it pulls a few still frames out of each video and shows them to a small AI that runs on your own computer (CLIP — think of it as a "look at a picture and score how well it matches a written sentence" model). The AI checks every frame against a checklist of plain tags — indoor or outdoor, one person or several, bright or dark, close-up or wide shot — and scores each one. The tags that score high enough get written into a small file that sits right next to the video.
+
+Feed those tag files into a library app like Stash (software that files your video collection away behind a search box) and you can search by tag instead of by filename: show me the dark, indoor, close-up ones.
+
+Everything runs on your own machine. No uploads, no cloud, no account — your frames never leave your hard drive. For this kind of collection, that's rather the point.
+
+What you get is a first draft, not the final word: an automatic first pass you can skim and correct, instead of tagging hundreds of files by hand from zero.
 
 ## How it works
 
