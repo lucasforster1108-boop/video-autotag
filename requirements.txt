@@ -1,0 +1,6 @@
+# CPU-only torch is enough and much smaller than the default CUDA build.
+# On Linux/Windows, install it first:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+torch
+transformers
+Pillow
